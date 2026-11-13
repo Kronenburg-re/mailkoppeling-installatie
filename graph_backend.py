@@ -15,10 +15,15 @@ _WELL_KNOWN = {"inbox": "inbox", "postvak in": "inbox", "drafts": "drafts", "con
                "archiveren": "archive", "deleted": "deleteditems", "verwijderde items": "deleteditems"}
 
 
+# Toepassings-id van de algemene Mailkoppeling-registratie bij Microsoft. Dit is geen geheim en geeft
+# niemand toegang tot mail: elke gebruiker meldt zelf aan en de toegang wordt alleen op de eigen server bewaard.
+DEFAULT_CLIENT_ID = "bfa1756a-4877-4db7-ba44-c8328dfa586c"
+
+
 def client_id() -> str:
-    """Toepassings-id van je eigen app-registratie in Microsoft Entra (omgevingsvariabele MS_CLIENT_ID).
-    Leeg = Hotmail/Outlook.com-koppeling staat uit."""
-    return os.environ.get("MS_CLIENT_ID", "").strip()
+    """Toepassings-id voor aanmelden bij Microsoft. Standaard de algemene Mailkoppeling-id; met de
+    omgevingsvariabele MS_CLIENT_ID kun je een eigen app-registratie gebruiken."""
+    return os.environ.get("MS_CLIENT_ID", "").strip() or DEFAULT_CLIENT_ID
 
 
 def device_start() -> dict:

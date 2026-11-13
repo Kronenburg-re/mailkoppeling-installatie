@@ -49,8 +49,9 @@ Vul je wachtwoord **alleen op deze beheerpagina** in. Zet het nooit in een chat 
 
 Wil je je handtekening onder elk concept? Klik bij de mailbox op **Handtekening ophalen uit verzonden mail**.
 
-**Hotmail of Outlook.com:** dat werkt niet met een wachtwoord, maar via aanmelden bij Microsoft. Daarvoor is eerst
-een Microsoft-toepassings-id nodig (zie onderaan). Zolang die er niet is, staat dit onderdeel uit.
+**Hotmail of Outlook.com:** dat werkt niet met een wachtwoord, maar via aanmelden bij Microsoft. Klik op de beheerpagina
+op **Hotmail- of Outlook.com-adres koppelen**, open de link, vul de code in die op het scherm staat en meld aan met het
+adres dat je wilt koppelen. Kies daarna **Accepteren**.
 
 ### Stap 4 – Koppel aan Claude of ChatGPT
 
@@ -95,13 +96,12 @@ of het in de map Concepten van je mailprogramma staat.
 - Stoppen? Verwijder de dienst in Render en de connector in Claude/ChatGPT. Je mailbox zelf verandert niet.
 - Verander `DATA_KEY` in Render niet: dan zijn de opgeslagen mailboxgegevens onleesbaar en moet je opnieuw koppelen.
 
-## Hotmail/Outlook.com (optioneel, technisch)
+## Hotmail/Outlook.com met een eigen Microsoft-id (optioneel, technisch)
 
-Microsoft staat voor deze adressen geen wachtwoordkoppeling toe. Er is een app-registratie in Microsoft Entra nodig:
-"accounts in elke organisatie en persoonlijke Microsoft-accounts", "openbare clientstromen toestaan" aan,
-gedelegeerde rechten `Mail.ReadWrite`, `User.Read`, `offline_access`. Zet de toepassings-id in Render onder
-**Environment** als `MS_CLIENT_ID` en klik op **Save, rebuild, and deploy**. Daarna verschijnt op de beheerpagina
-de knop om een Hotmail-adres te koppelen. Er is geen clientgeheim nodig.
+Hotmail en Outlook.com werken standaard, daar hoef je niets voor te doen. Wil je toch je eigen app-registratie in
+Microsoft Entra gebruiken: "accounts in elke organisatie en persoonlijke Microsoft-accounts", "openbare clientstromen
+toestaan" aan. Zet de toepassings-id in Render onder **Environment** als `MS_CLIENT_ID` en klik op
+**Save, rebuild, and deploy**. Er is geen clientgeheim nodig.
 
 ---
 © 2026 Kronenburg Real Estate B.V. Alle rechten voorbehouden. Deze versie is bedoeld om te testen; niet verder verspreiden of doorverkopen zonder toestemming.
