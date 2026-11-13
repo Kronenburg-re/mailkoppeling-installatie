@@ -1,0 +1,7 @@
+mcp>=2.3,<3
+uvicorn>=0.30
+starlette>=0.40
+python-multipart>=0.0.9
+cryptography>=42
+requests>=2.31
+anyio>=4

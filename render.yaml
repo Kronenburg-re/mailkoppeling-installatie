@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: mailkoppeling
+    runtime: python
+    plan: starter
+    region: frankfurt
+    autoDeploy: false
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.1
+      - key: DATA_DIR
+        value: /data
+      - key: MCP_SECRET
+        generateValue: true
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: DATA_KEY
+        generateValue: true
